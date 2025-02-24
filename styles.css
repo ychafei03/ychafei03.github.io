@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5; /* Light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
+header {
+    background-color: #4CAF50; /* Green header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Homepage */
+.home-header {
+    background-color: #2196F3; /* Blue header */
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.home-paragraph {
+    color: #FF5722; /* Orange paragraph */
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* About Page */
+.about-heading {
+    color: #FF9800; /* Orange heading */
+    text-align: center;
+}
+
+.about-paragraph {
+    color: #9C27B0; /* Purple paragraph */
+    font-size: 18px;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Contact Page */
+.content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    color: #4CAF50; /* Green labels */
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+input, textarea {
+    border: 2px solid #4CAF50; /* Green border */
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #4CAF50; /* Green button */
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Resume Page */
+h2 {
+    color: #4CAF50;
+    text-align: center;
+}
+
+.section {
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
+}
+
+.section ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.section ul li {
+    font-size: 16px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    nav {
+        padding: 15px;
+    }
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+}
