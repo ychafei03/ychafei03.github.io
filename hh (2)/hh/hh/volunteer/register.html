@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" id="theme-asset">
+	
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="csrf-token" content="tBiM22YmtBN1pDWi5DIg1Mft291LO2yPaZO2EMCz">
+	<meta name="description" content="HelpHub is a platform that matches volunteers with nearby charities, making it easy to discover opportunities, sign up, and create community impact—all in one place.">
+	<meta name="keywords" content="volunteer,campaign" />
+	<link rel="shortcut icon" href="public/img/favicon.png" />
+	<title> HelpHub</title>
+
+	<link href="public/css/corecfe8.css?v=5.1" rel="stylesheet">
+	<link href="public/css/bootstrap/bootstrap.mincfe8.css?v=5.1" rel="stylesheet">
+	<link href="public/css/bootstrap-iconscfe8.css?v=5.1" rel="stylesheet">
+	<link href="public/css/stylescfe8.css?v=5.1" rel="stylesheet">
+	<link rel="stylesheet" href="public/js/datepicker/datepicker3.css" type="text/css">
+
+	<script type="text/javascript">
+	  // Variables (same as above)…
+	</script>
+
+	<style>
+	  :root {
+	    --color-default: #04ada9;
+	  }
+	</style>
+
+	<!-- Scripts -->
+	<script>
+	  window.Laravel = {"csrfToken":"tBiM22YmtBN1pDWi5DIg1Mft291LO2yPaZO2EMCz"}
+	</script>
+</head>
+
+<body>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=APP_ID";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
+
+	<div class="popout font-default"></div>
+	<div class="btn-block text-center showBanner py-2" style="display:none;">
+	  <i class="fa fa-cookie-bite"></i> This site uses cookies, by continuing to use the service, you accept our use of cookies
+	  <a href="https://yousite.com/p/privacy" class="me-2" target="_blank"><strong>Learn more</strong></a>
+	  <button class="btn btn-sm btn-primary" id="close-banner">Got It!</button>
+	</div>
+
+	<div id="search">
+	  <a href="javascript:;" class="close text-decoration-none">×</a>
+	  <input type="text" value="" name="q" id="btnItems" placeholder="Enter Search Query..." />
+	  <button type="submit" class="btn btn-lg no-shadow btn-trans custom-rounded d-none btn_search" id="btnSearch">Search</button>
+	</div>
+
+	<header>
+	  <nav class="navbar navbar-expand-lg navbar-inverse fixed-top py-3 scroll">
+	    <div class="container d-flex fw-bold">
+	      <a class="navbar-brand" href="/hh/volunteer/index.html">
+	        <img src="public/img/logo.png" style="max-width: 100px;" class="align-baseline" alt="HelpHub" />
+	      </a>
+	      <ul class="navbar-nav ms-auto d-lg-none">
+	        <li class="nav-item">
+	          <a class="nav-link search" href="#search"><i class="fa fa-search"></i></a>
+	        </li>
+	      </ul>
+
+	      <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse"
+	          data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+	          aria-label="Toggle navigation">
+	        <i class="fa fa-bars"></i>
+	      </button>
+	      <div class="collapse navbar-collapse" id="navbarCollapse">
+
+	        <div class="d-lg-none text-right">
+	          <a href="javascript:;" class="close-menu" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+	              aria-controls="navbarCollapse" aria-expanded="false"><i class="fa fa-times"></i></a>
+	        </div>
+
+	        <ul class="navbar-nav me-auto">
+	          <li class="nav-item"><a class="nav-link" href="/hh/volunteer/index.html">Home</a></li>
+	          <li class="nav-item"><a class="nav-link" href="/hh/volunteer/charity-profile/Charity_profile.html">Charity Profile</a></li>
+	          <li class="nav-item"><a class="nav-link" href="/hh/volunteer/charity-list/charities.html">Charity List</a></li>
+	          <li class="nav-item">
+	            <a class="nav-link" href="javascript:void(0);" id="switchTheme">
+	              <i class="bi-moon-stars me-lg-0 me-2"></i> <span class="d-lg-none">Dark mode</span>
+	            </a>
+	          </li>
+	          <li class="nav-item d-none d-lg-block">
+	            <a class="nav-link search" href="#search"><i class="fa fa-search"></i></a>
+	          </li>
+	        </ul>
+
+	        <ul class="navbar-nav ms-auto">
+	          <!-- now root-relative so always works -->
+	          <li class="nav-item me-1">
+	            <a class="nav-link" href="/hh/volunteer/login.html">Login</a>
+	          </li>
+	          <li class="nav-item">
+	            <a class="nav-link btn btn-primary pr-3 pl-3 btn-create no-hover" href="/hh/volunteer/register.html">
+	              Become A Volunteer
+	            </a>
+	          </li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	</header>
+
+	<main role="main" class="pt-5 mt-5">
+	  <div class="container">
+	    <div class="row justify-content-center">
+	      <div class="col-md-6">
+	        <h2 class="my-4 text-center">Become a Volunteer</h2>
+	        <form action="/register" method="post">
+	          <div class="mb-3">
+	            <label for="fullName" class="form-label">Full Name</label>
+	            <input type="text" class="form-control" id="fullName" name="fullName" required>
+	          </div>
+	          <div class="mb-3">
+	            <label for="email" class="form-label">Email address</label>
+	            <input type="email" class="form-control" id="email" name="email" required>
+	          </div>
+	          <div class="mb-3">
+	            <label for="password" class="form-label">Password</label>
+	            <input type="password" class="form-control" id="password" name="password" required>
+	          </div>
+	          <div class="mb-3">
+	            <label for="confirmPassword" class="form-label">Confirm Password</label>
+	            <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" required>
+	          </div>
+	          <button type="submit" class="btn btn-primary w-100">Sign Up</button>
+	        </form>
+	      </div>
+	    </div>
+	  </div>
+	</main>
+
+	<div class="py-5 bg-dark-2 text-light">
+	  <footer class="container">
+	    <div class="row">
+	      <div class="col-md-3">
+	        <h6 class="text-uppercase">About</h6>
+	        <ul class="list-unstyled">
+	          <li><a class="link-footer" href="p/terms-of-service.html">Terms</a></li>
+	          <li><a class="link-footer" href="p/privacy.html">Privacy</a></li>
+	          <li><a class="link-footer" href="p/about.html">About us</a></li>
+	          <li><a class="link-footer" href="p/support.html">Support</a></li>
+	          <li><a class="link-footer" href="p/how-it-works.html">How it works</a></li>
+	        </ul>
+	      </div>
+	      <div class="col-md-3">
+	        <h6 class="text-uppercase">Categories</h6>
+	        <ul class="list-unstyled">
+	          <li><a class="link-footer" href="/hh/volunteer/category/Animals.html">Animals</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/category/Business.html">Business</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/category/Charity.html">Charity</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/category/Community.html">Community</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/category/Competitions.html">Competitions</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/categories.html">View all <i class="bi-arrow-right"></i></a></li>
+	        </ul>
+	      </div>
+	      <div class="col-md-3">
+	        <h6 class="text-uppercase">Links</h6>
+	        <ul class="list-unstyled">
+	          <li><a class="link-footer" href="/hh/volunteer/campaigns/latest.html">Explore</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/gallery.html">Gallery</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/login.html">Create Campaign</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/campaigns/featured.html">Featured Campaign</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/login.html">Login</a></li>
+	          <li><a class="link-footer" href="/hh/volunteer/register.html">Sign up</a></li>
+	          <li class="dropdown">
+	            <div class="btn-group dropup">
+	              <a class="btn btn-outline-light rounded-pill mt-2 no-hover dropdown-toggle px-4 e-none fw-light"
+	                 href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false">
+	                <i class="fa fa-globe mr-1"></i> English
+	              </a>
+	              <div class="dropdown-menu dropdown-menu-macos">
+	                <a class="dropdown-item dropdown-lang mb-1 active text-white ">
+	                  <i class="fa fa-check mr-1"></i> English
+	                </a>
+	              </div>
+	            </div>
+	          </li>
+	        </ul>
+	      </div>
+	      <div class="col-md-3">
+	        <a href="/hh/volunteer/index.html">
+	          <img src="public/img/watermark.png" width="200px">
+	        </a>
+	        <p class="text-muted">HelpHub is a platform that matches volunteers with nearby charities, making it easy to discover opportunities, sign up, and create community impact—all in one place.</p>
+	        <div id="installContainer" class="d-none-custom">
+	          <button class="btn btn-outline-light w-100 mb-4 mt-3" id="butInstall" type="button">
+	            <i class="bi-phone me-1"></i> Install Web App
+	          </button>
+	        </div>
+	      </div>
+	    </div>
+	  </footer>
+	</div>
+
+	<footer class="py-2 bg-dark-3 text-muted">
+	  <div class="container">
+	    <div class="row">
+	      <div class="col-md-6 copyright">
+	        &copy; 2024 HelpHub
+	      </div>
+	    </div>
+	  </div>
+	</footer>
+
+	<script src="public/js/core.mincfe8.js?v=5.1"></script>
+	<script src="public/css/bootstrap/bootstrap.mincfe8.js?v=5.1"></script>
+	<script src="public/js/jqueryTimeago_en.js"></script>
+	<script src="public/js/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+	<script src="public/js/app-functionscfe8.js?v=5.1"></script>
+	<script src="public/js/install-appcfe8.js?v=5.1"></script>
+	<script src="public/js/switch-themecfe8.js?v=5.1"></script>
+	<script src="https://js.stripe.com/v3/"></script>
+
+	<script type="text/javascript">
+	  pagination('ajax/campaignsa54e.html?page=', 'Error occurred');
+	</script>
+
+	<div id="bodyContainer"></div>
+</body>
+</html>

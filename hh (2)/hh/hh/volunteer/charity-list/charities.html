@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light" id="theme-asset">
+  
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="csrf-token" content="tBiM22YmtBN1pDWi5DIg1Mft291LO2yPaZO2EMCz">
+  <meta name="description" content="HelpHub is a platform that matches volunteers with nearby charities, making it easy to discover opportunities, sign up, and create community impact—all in one place.">
+  <meta name="keywords" content="volunteer,campaign" />
+  <link rel="shortcut icon" href="../public/img/favicon.png" />
+  <title>Charity List</title>
+
+  <link href="../public/css/corecfe8.css?v=5.1" rel="stylesheet">
+  <link href="../public/css/bootstrap/bootstrap.mincfe8.css?v=5.1" rel="stylesheet">
+  <link href="../public/css/bootstrap-iconscfe8.css?v=5.1" rel="stylesheet">
+  <link href="../public/css/stylescfe8.css?v=5.1" rel="stylesheet">
+  <link rel="stylesheet" href="../public/js/datepicker/datepicker3.css" type="text/css">
+
+  <script type="text/javascript">
+    // Variables
+    var URL_BASE = "../index.html";
+    var ReadMore = "View more...";
+    var ReadLess = "View less...";
+    var error = "Error occurred";
+    var categoriesCount = 0;
+    var copied = "Copied!";
+    var delete_confirm = "Are you sure?";
+    var confirm_delete_campaign = "Are you sure you want to delete this campaign?";
+    var yes_confirm = "Yes, delete it!";
+    var cancel_confirm = "No, cancel!";
+    var formats_available = "Invalid format JPG, GIF and PNG format permitted.";
+
+    var file_size_allowed = 5242880;
+    var max_size = "The image must be greater than or equal to: 5MB";
+    var min_width = 800;
+    var min_height = 400;
+    var width_min_alert = "The image must be greater than, or equal to 800 px in width";
+    var height_min_alert = "The image must be greater than, or equal to 400 px in height";
+    var urlImageEditor = "../ajax/upload/image4571.html?_token=tBiM22YmtBN1pDWi5DIg1Mft291LO2yPaZO2EMCz";
+    var card_required_name_email = 'You must provide your name and email to process your donation with your card.';
+    var error_payment_stripe_3d = 'The latest payment attempt has failed or been canceled, and the attached payment method has been removed. You can try confirming again with a new payment method.';
+    var amount = 'Amount';
+    var donations = 'Donations';
+    var decimalFormat = 'dot';
+    var currencyPosition = 'left';
+    var currencySymbol = '$';
+    var darkMode = "Dark mode";
+    var lightMode = "Light mode";
+  </script>
+
+  <style>
+    :root {
+      --color-default: #04ada9;
+    }
+  </style>
+
+  <!-- Scripts -->
+  <script>
+    window.Laravel = {"csrfToken":"tBiM22YmtBN1pDWi5DIg1Mft291LO2yPaZO2EMCz"}
+  </script>
+</head>
+
+<body>
+  <div id="fb-root"></div>
+  <script>
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "../../connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=APP_ID";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  </script>
+
+  <div class="popout font-default"></div>
+  <div class="btn-block text-center showBanner py-2" style="display:none;">
+    <i class="fa fa-cookie-bite"></i> This site uses cookies, by continuing to use the service, you accept our use of cookies
+    <a href="https://yousite.com/p/privacy" class="me-2" target="_blank"><strong>Learn more</strong></a>
+    <button class="btn btn-sm btn-primary" id="close-banner">Got It!</button>
+  </div>
+
+  <div id="search">
+    <a href="javascript:;" class="close text-decoration-none">×</a>
+    <input type="text" value="" name="q" id="btnItems" placeholder="Enter Search Query..." />
+    <button type="submit" class="btn btn-lg no-shadow btn-trans custom-rounded d-none btn_search" id="btnSearch">Search</button>
+  </div>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-inverse fixed-top py-3 shadow-sm bg-dark ">
+      <div class="container d-flex fw-bold">
+        <a class="navbar-brand" href="../index.html">
+          <img src="../public/img/logo.png" style="max-width: 100px;" class="align-baseline" alt="HelpHub" />
+        </a>
+        <ul class="navbar-nav ms-auto d-lg-none">
+          <li class="nav-item">
+            <a class="nav-link search" href="#search"><i class="fa fa-search"></i></a>
+          </li>
+        </ul>
+
+        <button class="navbar-toggler text-white border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="d-lg-none text-right">
+            <a href="javascript:;" class="close-menu" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"><i class="fa fa-times"></i></a>
+          </div>
+
+          <ul class="navbar-nav me-auto">
+            <a class="nav-link" role="button" href="../index.html" aria-expanded="false">
+              Home
+            </a>
+            <a class="nav-link" role="button" href="../charity-profile/Charity_profile.html" aria-expanded="false">
+              Charity Profile Page
+            </a>
+            <a class="nav-link" role="button" href="../charity-list/charities.html" aria-expanded="false">
+              Charity List
+            </a>
+            <li class="nav-item">
+              <a class="nav-link" href="javascript:void(0);" id="switchTheme">
+                <i class="bi-moon-stars me-lg-0 me-2"></i> <span class="d-lg-none">Dark mode</span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-lg-block">
+              <a class="nav-link search" href="#search"><i class="fa fa-search"></i></a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item me-1">
+              <a class="nav-link" href="../login.html">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary pr-3 pl-3 btn-create no-hover" href="latest.html">Become A Volunteer</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" class="padding-top-78">
+    <div class="py-5 bg-primary bg-sections">
+      <div class="btn-block text-center text-white">
+        <h1>Charity List</h1>
+        <p>Explore New List</p>
+      </div>
+    </div><!-- container -->
+
+    <!-- New section for CharityAPI test data -->
+    <div class="py-5 bg-white">
+      <div class="container">
+        <h2>Charity API Test Data</h2>
+        <div id="charity-data">
+          <!-- Test charity data will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- New Section: Dynamic Charity Data from CharityAPI -->
+    <div class="py-5 bg-white">
+      <div class="container">
+        <div id="charity-container">
+          <!-- CharityAPI data will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Existing Static Content (Campaigns) -->
+    <div class="py-5 bg-white">
+      <div class="container">
+        <div class="row" id="campaigns">
+          <div class="col-md-4">
+            <div class="card campaigns mb-4 shadow-sm">
+              <a href="../campaign/4/food-for-homeless.html" class="p-relative">
+                <div class="ribbon-1" title="Featured Campaign"><i class="fa fa-award"></i></div>
+                <img class="card-img-top" src="../public/campaigns/small/11732212766lnkwect46ariofuzf7zuhs5ltpkpeaskq8xlrtno.jpg" alt="Food for homeless">
+              </a>
+              <div class="card-body">
+                <small class="btn-block mb-1">
+                  <a href="../category/Charity.html" class="text-muted">
+                    <i class="far fa-folder-open"></i> Charity
+                  </a>
+                </small>
+                <h5 class="card-title text-truncate">
+                  <a href="../campaign/4/food-for-homeless.html" class="text-dark">Food for homeless</a>
+                </h5>
+                <div class="progress progress-xs mb-1">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 16.67%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><strong>1</strong> volunteers of 6 required</small>
+                  <small class="font-weight-bold">16.67%</small>
+                </div>
+                <hr>
+                <p class="card-text text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tortor rutru...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="text-truncate">
+                    <img src="../public/avatar/default.jpg" width="25" height="25" class="rounded-circle avatar-campaign">
+                    <a href="../charity-profile/6.html"><small>by <strong>Human Rights</strong></small></a>
+                  </span>
+                  <small class="text-truncate"><i class="far fa-clock text-success"></i> 115 days left</small>
+                </div>
+                <hr>
+                <div>
+                  <a class="nav-link btn btn-primary pr-3 pl-3 btn-create no-hover rounded-pill" href="../login.html">Become A Volunteer</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- /col -->
+          <div class="col-md-4">
+            <div class="card campaigns mb-4 shadow-sm">
+              <a href="../campaign/3/testing-compaign.html" class="p-relative">
+                <div class="ribbon-1" title="Featured Campaign"><i class="fa fa-award"></i></div>
+                <img class="card-img-top" src="../public/campaigns/small/11732212616jlquhw354s3hwwrdyrpqluhasnnhf3pkjgqes9pt.jpg" alt="Testing compaign">
+              </a>
+              <div class="card-body">
+                <small class="btn-block mb-1">
+                  <a href="../category/Emergencies.html" class="text-muted">
+                    <i class="far fa-folder-open"></i> Emergencies
+                  </a>
+                </small>
+                <h5 class="card-title text-truncate">
+                  <a href="../campaign/3/testing-compaign.html" class="text-dark">Testing compaign</a>
+                </h5>
+                <div class="progress progress-xs mb-1">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 14.29%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><strong>1</strong> volunteers of 7 required</small>
+                  <small class="font-weight-bold">14.29%</small>
+                </div>
+                <hr>
+                <p class="card-text text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tortor rutru...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="text-truncate">
+                    <img src="../public/avatar/default.jpg" width="25" height="25" class="rounded-circle avatar-campaign">
+                    <a href="../charity-profile/6.html"><small>by <strong>Human Rights</strong></small></a>
+                  </span>
+                  <small class="text-truncate"><i class="far fa-clock text-success"></i> 193 days left</small>
+                </div>
+                <hr>
+                <div>
+                  <a class="nav-link btn btn-primary pr-3 pl-3 btn-create no-hover rounded-pill" href="../login.html">Become A Volunteer</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- /col -->
+          <div class="col-md-4">
+            <div class="card campaigns mb-4 shadow-sm">
+              <a href="../campaign/2/donate-for-the-chage.html" class="p-relative">
+                <div class="ribbon-1" title="Featured Campaign"><i class="fa fa-award"></i></div>
+                <img class="card-img-top" src="../public/campaigns/small/117322124698mikia5dcjei4wc833yedgmrtpfqcgq67pcbvy8f.jpg" alt="Donate for the chage">
+              </a>
+              <div class="card-body">
+                <small class="btn-block mb-1">
+                  <a href="../category/Community.html" class="text-muted">
+                    <i class="far fa-folder-open"></i> Community
+                  </a>
+                </small>
+                <h5 class="card-title text-truncate">
+                  <a href="../campaign/2/donate-for-the-chage.html" class="text-dark">Donate for the chage</a>
+                </h5>
+                <div class="progress progress-xs mb-1">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 0.00%"></div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                  <small class="text-muted"><strong>0</strong> volunteers of 11 required</small>
+                  <small class="font-weight-bold">0.00%</small>
+                </div>
+                <hr>
+                <p class="card-text text-truncate">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut tortor rutru...</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="text-truncate">
+                    <img src="../public/avatar/default.jpg" width="25" height="25" class="rounded-circle avatar-campaign">
+                    <a href="../charity-profile/6.html"><small>by <strong>Human Rights</strong></small></a>
+                  </span>
+                  <small class="text-truncate"><i class="far fa-clock text-success"></i> 68 days left</small>
+                </div>
+                <hr>
+                <div>
+                  <a class="nav-link btn btn-primary pr-3 pl-3 btn-create no-hover rounded-pill" href="../login.html">Become A Volunteer</a>
+                </div>
+              </div>
+            </div>
+          </div><!-- /col -->
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-block text-center py-3 ">
+      <!-- Pagination or additional content could go here -->
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <div class="py-5 bg-dark-2 text-light">
+    <footer class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <h6 class="text-uppercase">About</h6>
+          <ul class="list-unstyled">
+            <li><a class="link-footer" href="../p/terms-of-service.html">Terms</a></li>
+            <li><a class="link-footer" href="../p/privacy.html">Privacy</a></li>
+            <li><a class="link-footer" href="../p/about.html">About us</a></li>
+            <li><a class="link-footer" href="../p/support.html">Support</a></li>
+            <li><a class="link-footer" href="../p/how-it-works.html">How it works</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-3">
+          <h6 class="text-uppercase">Categories</h6>
+          <ul class="list-unstyled">
+            <li><a class="link-footer" href="../category/Animals.html">Animals</a></li>
+            <li><a class="link-footer" href="../category/Business.html">Business</a></li>
+            <li><a class="link-footer" href="../category/Charity.html">Charity</a></li>
+            <li><a class="link-footer" href="../category/Community.html">Community</a></li>
+            <li><a class="link-footer" href="../category/Competitions.html">Competitions</a></li>
+            <li><a class="link-footer" href="../categories.html">View all <i class="bi-arrow-right"></i></a></li>
+          </ul>
+        </div>
+      
+        <div class="col-md-3">
+          <h6 class="text-uppercase">Links</h6>
+          <ul class="list-unstyled">
+            <li><a class="link-footer" href="latest.html">Explore</a></li>
+            <li><a class="link-footer" href="../gallery.html">Gallery</a></li>
+            <li><a class="link-footer" href="../login.html">Create Campaign</a></li>
+            <li><a class="link-footer" href="featured.html">Featured Campaign</a></li>
+            <li><a class="link-footer" href="../login.html">Login</a></li>
+            <li><a class="link-footer" href="../register.html">Sign up</a></li>
+            <li class="dropdown">
+              <div class="btn-group dropup">
+                <a class="btn btn-outline-light rounded-pill mt-2 no-hover dropdown-toggle px-4 e-none fw-light" href="javascript:;" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa fa-globe mr-1"></i> English
+                </a>
+                <div class="dropdown-menu dropdown-menu-macos">
+                  <a class="dropdown-item dropdown-lang mb-1 active text-white">
+                    <i class="fa fa-check mr-1"></i> English
+                  </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      
+        <div class="col-md-3">
+          <a href="../index.html">
+            <img src="../public/img/watermark.png" width="200px">
+          </a>
+          <p class="text-muted">HelpHub is a platform that matches volunteers with nearby charities, making it easy to discover opportunities, sign up, and create community impact—all in one place.</p>
+          <div id="installContainer" class="d-none-custom">
+            <button class="btn btn-outline-light w-100 mb-4 mt-3" id="butInstall" type="button">
+              <i class="bi-phone me-1"></i> Install Web App
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <footer class="py-2 bg-dark-3 text-muted">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 copyright">
+          &copy; 2024 HelpHub
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../public/js/core.mincfe8.js?v=5.1"></script>
+  <script src="../public/css/bootstrap/bootstrap.mincfe8.js?v=5.1"></script>
+  <script src="../public/js/jqueryTimeago_en.js"></script>
+  <script src="../public/js/datepicker/bootstrap-datepicker.js" type="text/javascript"></script>
+  <script src="../public/js/app-functionscfe8.js?v=5.1"></script>
+  <script src="../public/js/install-appcfe8.js?v=5.1"></script>
+  <script src="../public/js/switch-themecfe8.js?v=5.1"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="../public/js/api-charity.js"></script>
+
+  <script type="text/javascript">
+    pagination('latesta54e.html?page=', 'Error occurred');
+  </script>
+  <div id="bodyContainer"></div>
+</body>
+</html>
